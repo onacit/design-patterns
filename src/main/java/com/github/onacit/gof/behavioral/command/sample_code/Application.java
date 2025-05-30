@@ -21,7 +21,11 @@ class Application {
     }
 
     Optional<Document> currentDocument() {
-        return documents.stream().reduce((f, s) -> s);
+//        return documents.stream().reduce((f, s) -> s);
+        if (documents.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(documents.get(documents.size() - 1));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
