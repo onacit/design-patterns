@@ -1,10 +1,12 @@
 package com.github.onacit.gof.behavioral.command.sample_code;
 
-class PasteCommand extends SimpleCommand<Document> {
+import java.util.function.Supplier;
 
-    PasteCommand(final Document receiver) {
+class PasteCommand extends SimpleCommand<Supplier<? extends Document>> {
+
+    PasteCommand(final Supplier<? extends Document> receiver) {
         super(receiver, r -> {
-            r.paste("whatever");
+            r.get().paste("whatever");
         });
     }
 }

@@ -8,12 +8,12 @@ class _Main {
         final var open = new OpenCommand(application);
         open.execute();
         // -------------------------------------------------------------------------------------------------------------
-        final var paste = new PasteCommand(application.currentDocument().orElseThrow());
+        final var paste = new PasteCommand(() -> application.currentDocument().orElseThrow());
         paste.execute();
         // -------------------------------------------------------------------------------------------------------------
         final var macro = MacroCommand.of(
                 new OpenCommand(application),
-                new PasteCommand(application.currentDocument().orElseThrow())
+                new PasteCommand(() -> application.currentDocument().orElseThrow())
         );
         macro.execute();
     }
