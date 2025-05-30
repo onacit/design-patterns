@@ -5,6 +5,13 @@ import java.util.List;
 
 class MacroCommand extends Command {
 
+    static MacroCommand of(final Command... commands) {
+        final var macro = new MacroCommand();
+        macro.commands.addAll(List.of(commands));
+        return macro;
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
     MacroCommand() {
         super();
         this.commands = new ArrayList<>();
