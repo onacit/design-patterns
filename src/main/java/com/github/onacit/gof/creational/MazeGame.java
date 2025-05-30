@@ -1,8 +1,8 @@
 package com.github.onacit.gof.creational;
 
-public class MazeGame {
+class MazeGame {
 
-    public Maze createMaze() {
+    Maze createMaze() {
         final Maze maze = new Maze();
         final Room room1 = new Room(1);
         final Room room2 = new Room(2);
