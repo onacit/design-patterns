@@ -2,7 +2,7 @@ package com.github.onacit.gof.creational;
 
 import java.util.EnumMap;
 
-public class Room extends MapSite {
+public class Room extends MapSite implements TypedCloneable<Room> {
 
     public enum Direction {
         NORTH, SOUTH, EAST, WEST
@@ -26,6 +26,10 @@ public class Room extends MapSite {
         return roomNo;
     }
 
+    public void setRoomNo(final int roomNo) {
+        this.roomNo = roomNo;
+    }
+
     // ----------------------------------------------------------------------------------------------------------- sides
     public MapSite getSide(final Direction direction) {
         return sides.get(direction);
@@ -36,7 +40,7 @@ public class Room extends MapSite {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private final int roomNo;
+    private int roomNo;
 
     private final EnumMap<Direction, MapSite> sides;
 }

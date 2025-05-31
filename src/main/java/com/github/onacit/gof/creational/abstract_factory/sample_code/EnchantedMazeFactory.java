@@ -6,12 +6,12 @@ import com.github.onacit.gof.creational.Room;
 class EnchantedMazeFactory extends MazeFactory {
 
     @Override
-    Room makeRoom(final int roomNo) {
+    protected Room makeRoom(final int roomNo) {
         return new EnchantedRoom(roomNo, new CastSpell());
     }
 
     @Override
-    Door makeDoor(final Room r1, final Room r2) {
+    protected Door makeDoor(final Room r1, final Room r2) {
         return new DoorNeedingSpell(r1, r2);
     }
 }

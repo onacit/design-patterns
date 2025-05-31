@@ -5,7 +5,7 @@ import com.github.onacit.gof.creational.Wall;
 class BombedMazeFactory extends MazeFactory {
 
     @Override
-    Wall makeWall() {
+    protected Wall makeWall() {
         return new BombedWall();
     }
 }

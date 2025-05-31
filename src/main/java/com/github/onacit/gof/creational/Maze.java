@@ -3,7 +3,7 @@ package com.github.onacit.gof.creational;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Maze extends MapSite {
+public class Maze extends MapSite implements TypedCloneable<Maze> {
 
     public Maze() {
         super();

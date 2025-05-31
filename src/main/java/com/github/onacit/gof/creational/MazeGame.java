@@ -1,6 +1,6 @@
 package com.github.onacit.gof.creational;
 
-class MazeGame {
+public class MazeGame {
 
     Maze createMaze() {
         final Maze maze = new Maze();
@@ -18,5 +18,21 @@ class MazeGame {
         maze.addRoom(room1);
         maze.addRoom(room2);
         return maze;
+    }
+
+    protected Maze makeMaze() {
+        return new Maze();
+    }
+
+    protected Room makeRoom(final int roomNo) {
+        return new Room(roomNo);
+    }
+
+    protected Wall makeWall() {
+        return new Wall();
+    }
+
+    protected Door makeDoor(final Room r1, final Room r2) {
+        return new Door(r1, r2);
     }
 }

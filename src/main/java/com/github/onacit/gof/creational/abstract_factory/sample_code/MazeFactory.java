@@ -5,21 +5,21 @@ import com.github.onacit.gof.creational.Maze;
 import com.github.onacit.gof.creational.Room;
 import com.github.onacit.gof.creational.Wall;
 
-class MazeFactory {
+public class MazeFactory {
 
-    Maze makeMaze() {
+    protected Maze makeMaze() {
         return new Maze();
     }
 
-    Wall makeWall() {
+    protected Wall makeWall() {
         return new Wall();
     }
 
-    Room makeRoom(final int roomNo) {
+    protected Room makeRoom(final int roomNo) {
         return new Room(roomNo);
     }
 
-    Door makeDoor(final Room r1, final Room r2) {
+    protected Door makeDoor(final Room r1, final Room r2) {
         return new Door(r1, r2);
     }
 }
